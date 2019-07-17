@@ -3,6 +3,7 @@ agent any
 tools{
 	maven 'apache-maven'
 	jdk 'jdk1.8'
+	git 'git'
 }
 
 

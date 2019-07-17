@@ -5,7 +5,7 @@ tools{
 	jdk 'jdk1.8'
 }
 
-}
+
 stages{
 
 	stage('Initialization') {
@@ -37,4 +37,5 @@ stages{
 	}
 	
 	
+}
 }

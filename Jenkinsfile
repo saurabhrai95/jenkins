@@ -23,7 +23,7 @@ stages{
 		steps{
 			bat '''
 			
-			mvn install
+			mvn test
 		'''
 		}
 	

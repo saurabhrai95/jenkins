@@ -12,13 +12,10 @@ stages{
 	
 	stage('Checkout') {
 		steps{
-			bat '''
-			echo "JAVA_HOME = ${env.JAVA_HOME}"
-			echo "M2_HOME = ${env.M2_HOME}"
-			echo "Checkout from git"
+			
 			git(url: 'https://github.com/saurabhrai95/read-service.git', branch: 'master', changelog: true, credentialsId: '04c4fe5a-c72f-4e4f-8d7d-86fb3e798317')
-			'''
 		}
+		
 	
 	}
 	
@@ -26,7 +23,7 @@ stages{
 		steps{
 			bat '''
 			cd read-service
-			${env.M2_HOME}/mvn install
+			mvn install
 		'''
 		}
 	

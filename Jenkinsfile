@@ -16,7 +16,7 @@ stages{
 			echo "JAVA_HOME = ${JAVA_HOME}"
 			echo "M2_HOME = ${M2_HOME}"
 			echo "Checkout from git"
-			git clone https://github.com/saurabhrai95/read-service.git
+			%JAVA2_HOME%/bin -version
 			'''
 		}
 	

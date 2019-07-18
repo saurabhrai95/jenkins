@@ -3,7 +3,7 @@ agent any
 
 environment {
     JAVA_HOME = 'C:\\Users\\saurabh_rai\\Desktop\\OpenJDK8U-x64_windows_8u212b04\\openjdk-8u212-b04'
-	M2_HOME = 'C:\Users\saurabh_rai\Downloads\apache-maven-3.6.1-bin\apache-maven-3.6.1'
+	M2_HOME = 'C:\\Users\\saurabh_rai\\Downloads\\apache-maven-3.6.1-bin\\apache-maven-3.6.1'
   }
 
 

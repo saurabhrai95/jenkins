@@ -13,10 +13,10 @@ stages{
 	stage('Checkout') {
 		steps{
 			bat '''
-			echo "JAVA_HOME = ${JAVA_HOME}"
+			echo "JAVA_HOME = ${JAVA2_HOME}"
 			echo "M2_HOME = ${M2_HOME}"
 			echo "Checkout from git"
-			%JAVA2_HOME%/bin -version
+			${JAVA2_HOME}/bin -version
 			'''
 		}
 	

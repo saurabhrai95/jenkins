@@ -23,7 +23,7 @@ stages{
 		steps{
 			bat '''
 			
-			mvn test
+			mvn clean test
 		'''
 		}
 	

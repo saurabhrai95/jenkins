@@ -18,6 +18,7 @@ stages{
 		steps{
 			
 			bat '''
+			java -version
 			git clone https://github.com/saurabhrai95/read-service.git
 			'''
 		}

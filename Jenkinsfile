@@ -36,16 +36,20 @@ stages{
     steps {
         withSonarQubeEnv('sonarqube') {
             bat "${scannerHome}/bin/sonar-scanner"
+			
         }
-        def qualitygate = waitForQualityGate()
-		if (qualitygate.status != "OK") {
-         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+		script{
+			def qualitygate = waitForQualityGate()
+			if (qualitygate.status != "OK") {
+				error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+		}
+        
       }
     }
 	
 	}
 	
-	stage('Build'){
+	stage('Upload Jar'){
 		steps{
 			bat '''
 			echo "success"

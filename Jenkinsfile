@@ -26,8 +26,8 @@ stages{
 	stage('Unit Test'){
 		steps{
 			bat '''
-			cd read-service
-			mvn test
+			
+			mvn install
 		'''
 		}
 	
@@ -40,10 +40,12 @@ stages{
     steps {
         withSonarQubeEnv('sonarqube') {
             bat "${scannerHome}/bin/sonar-scanner"
-        }
-        timeout(time: 1, unit: 'MINUTES') {
+		
+		timeout(time: 2, unit: 'MINUTES') {
             waitForQualityGate abortPipeline: true
         }
+        }
+        
     }
 	
 	}

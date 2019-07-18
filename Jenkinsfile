@@ -23,10 +23,12 @@ stages{
 	}
 	
 	stage('Build'){
-		bat '''
+		steps{
+			bat '''
 			cd read-service
 			${env.M2_HOME}/mvn install
 		'''
+		}
 	
 	}
 	

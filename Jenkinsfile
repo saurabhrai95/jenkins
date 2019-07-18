@@ -40,9 +40,10 @@ stages{
         }
 		script{
 			def qualitygate = waitForQualityGate()
-			error " quality gate coverage : ${qualitygate.status}"
+			
 			if (qualitygate.status != "OK") {
 				error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+				
 		}
         
       }

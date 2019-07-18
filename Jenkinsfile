@@ -6,10 +6,6 @@ tools {
   jdk 'jdk1.8'
 }
 
-environment {
-    JAVA_HOME = 'C:\\Users\\saurabh_rai\\Desktop\\OpenJDK8U-x64_windows_8u212b04\\openjdk-8u212-b04'
-	M2_HOME = 'C:\\Users\\saurabh_rai\\Downloads\\apache-maven-3.6.1-bin\\apache-maven-3.6.1'
-  }
 
 
 stages{
@@ -23,7 +19,7 @@ stages{
 	
 	}
 	
-	stage('Unit Test'){
+	stage('Build'){
 		steps{
 			bat '''
 			
@@ -40,13 +36,11 @@ stages{
     steps {
         withSonarQubeEnv('sonarqube') {
             bat "${scannerHome}/bin/sonar-scanner"
-		
         }
-    def qualitygate = waitForQualityGate()
-      if (qualitygate.status != "OK") {
+        def qualitygate = waitForQualityGate()
+		if (qualitygate.status != "OK") {
          error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
       }
-        
     }
 	
 	}
@@ -54,8 +48,7 @@ stages{
 	stage('Build'){
 		steps{
 			bat '''
-			cd read-service
-			mvn install
+			echo "success"
 		'''
 		}
 	

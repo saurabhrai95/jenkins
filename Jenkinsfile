@@ -31,7 +31,7 @@ stages{
 	
 	stage('Sonarqube') {
 		environment {
-        scannerHome = tool 'SonarQubeScanner'
+        scannerHome = tool 'SonarQubeScanner1'
     }
     steps {
         withSonarQubeEnv('sonarqube') {

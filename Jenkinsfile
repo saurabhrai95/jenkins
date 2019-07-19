@@ -51,11 +51,12 @@ stages{
 	
 	}
 	
-	stage('Upload Jar'){
+	stage('Building Docker Image'){
+	environment {
+        dockerHome = tool 'Docker'
+    }
 		steps{
-			bat '''
-			echo "success"
-		'''
+			bat "${dockerHome}/docker build docker/Dockerfile target/read-service-0.0.1-SNAPSHOT.jar"
 		}
 	
 	}
